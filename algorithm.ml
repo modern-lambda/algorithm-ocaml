@@ -9,7 +9,6 @@
    val split : 'a list -> 'a list -> 'a list -> 'a list * 'a list = <fun>
    val mergesort : ('a -> 'a -> bool) -> 'a list -> 'a list = <fun>
    val map : ('a -> 'b) -> 'a list -> 'b list = <fun>
-
 *)
 let rec factorial a =
   match a with
