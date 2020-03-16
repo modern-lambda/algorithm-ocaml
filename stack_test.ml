@@ -1,3 +1,4 @@
+open stack;;
 assert (push Empty 5 = Item (5, Empty));;
 assert (push (Item (5, Empty)) 6 = Item (6, Item (5, Empty)));;
 
