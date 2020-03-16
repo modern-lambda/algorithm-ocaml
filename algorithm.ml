@@ -1,4 +1,16 @@
-(* factorial : int -> int *)
+(*
+   val factorial : int -> int = <fun>
+   val length : 'a list -> int = <fun>
+   val take : int -> 'a list -> 'a list = <fun>
+   val drop : int -> 'a list -> 'a list = <fun>
+   val sort_insert : 'a -> 'a list -> 'a list = <fun>
+   val sort : 'a list -> 'a list = <fun>
+   val merge : ('a -> 'a -> bool) -> 'a list -> 'a list -> 'a list = <fun>
+   val split : 'a list -> 'a list -> 'a list -> 'a list * 'a list = <fun>
+   val mergesort : ('a -> 'a -> bool) -> 'a list -> 'a list = <fun>
+   val map : ('a -> 'b) -> 'a list -> 'b list = <fun>
+
+*)
 let rec factorial a =
   match a with
   | 1 -> 1
@@ -56,4 +68,7 @@ and mergesort cmp x =
   | _ -> let (pri, seg) = split x [] []
     in (merge cmp (mergesort cmp pri) (mergesort cmp seg))
 
-
+let rec map f l =
+  match l with
+  | [] -> []
+  | h::t -> f h :: map f t
